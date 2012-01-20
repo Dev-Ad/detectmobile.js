@@ -6,6 +6,9 @@
                 <!-- test domain name rewrites -->
                 <script>
                         var url = detectmobile.replaceDomainName("http://www.foobar.com:9999", "m.barbar.com");
+
+						detectmobile.mobileDevices.push( ['safari', 'safari', 'd'] );
+
 			if(url != "http://m.barbar.com:9999") {
 				throw "Failed replace domain name:" + url;
 			}

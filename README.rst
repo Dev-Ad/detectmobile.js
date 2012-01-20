@@ -47,14 +47,13 @@ Using a Javascript feature based detection over HTTP User-agent header based det
 
 * Front end caching performance is not destroyed by the need for vary by user agents
 
-* You do not need to maintain huge user agent database (thousands of devices)
-
 * You need minimal amount of server-side code
 
 * Compatible with any programming language or framework (Python, PHP, 
   C#, ASP.NET, Java, even static HTML files...)
   
-* You can actually understand the codebase  
+* You can actually understand the codebase
+
 
 Requirements
 -------------
@@ -131,6 +130,38 @@ corresponding mobile page, `not the site root <http://xkcd.com/869/>`_.
                                 }
                         </script>
                 </head>
+
+
+To Add any Device for Your Page
+
+::
+
+        <html>
+                <head>
+                        <script src="http://xxx.com/detectmobile.js"></script>
+                        <script>
+                                try {
+                                        // This is the URL where mobile 
+                                        detectmobile.defaultMobileURL = "http://m.xxx.com";
+                                        detectmobile.mobileDevices.push( ['safari', 'Apple Safari', 'n' ] );
+
+                                        detectmobile.process();                                
+                                } catch(e) {
+                                        // Make sure that in the fault modes
+                                        // we do not interrupt execution of other Javascript code
+                                }
+                        </script>
+                </head>
+
+
+The options for this Line:
+``detectmobile.mobileDevices.push( ['safari', 'Apple Safari', 'OPTION' ] );``
+
+You can use:
+* n = No Mobile Device
+* u = Unique Device (always Mobile)
+* d or '' = Detected by User-Agent and after this matches use the Screen Resolution to Detect Mobile
+
 
 
 Link to the web site
@@ -365,6 +396,8 @@ Author
 * `Mikko Ohtamaa <http://opensourcehacker.com>`_
 
 * Additional work by Jussi Toivola
+
+* Additional work by Gerhard Kanzler at `elements.at <http://elements.at>`_
 
 License
 --------
