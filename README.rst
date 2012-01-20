@@ -159,13 +159,13 @@ To Add any Device for Your Page
 The options for this Line:
 ``detectmobile.mobileDevices.push( ['safari', 'Apple Safari', 'OPTION' ] );``
 
-You can use:
+You can use:**::
 
-* n = No Mobile Device
+        n = No Mobile Device
 
-* u = Unique Device (always Mobile)
+        u = Unique Device (always Mobile)
 
-* d or '' = Detected by User-Agent and after this matches use the Screen Resolution to Detect Mobile
+        d or '' = Detected by User-Agent and after this matches use the Screen Resolution to Detect Mobile
 
 
 
