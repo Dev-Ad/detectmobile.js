@@ -143,6 +143,8 @@ To Add any Device for Your Page
                                 try {
                                         // This is the URL where mobile 
                                         detectmobile.defaultMobileURL = "http://m.xxx.com";
+
+                                        //-> Add the User-Agent String
                                         detectmobile.mobileDevices.push( ['safari', 'Apple Safari', 'n' ] );
 
                                         detectmobile.process();                                
@@ -158,8 +160,11 @@ The options for this Line:
 ``detectmobile.mobileDevices.push( ['safari', 'Apple Safari', 'OPTION' ] );``
 
 You can use:
+
 * n = No Mobile Device
+
 * u = Unique Device (always Mobile)
+
 * d or '' = Detected by User-Agent and after this matches use the Screen Resolution to Detect Mobile
 
 
