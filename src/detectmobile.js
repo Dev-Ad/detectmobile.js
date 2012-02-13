@@ -131,7 +131,7 @@ var detectmobile = {
 		['sharp',			"Sharp",			'd'],
 		['alcatel',			"Alcatel",			'd'],
 		['mot-',			"Motorola",			'd'],
-		['zte',				"ZTE",				'd']
+		['zte',				"ZTE",				'd'],
 
 		//-> OS
 		['symbian',			"Symbian",			'd'],
@@ -152,7 +152,7 @@ var detectmobile = {
 		['o2',				"O2",				'd'],
 
 		//-> Fallback
-		['mobile',			"Generic",			'd'],
+		['mobile',			"Generic",			'u'],
 		['wireless',		"Generic",			'd'],
 		['j2me',			"Generic",			'd'],
 		['midp',			"Generic",			'd'],
