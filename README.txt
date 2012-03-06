@@ -1,9 +1,8 @@
-.. contents :: :local:
 
 Introduction
 --------------
 
-``detectmobile.js`` allows you detect mobile browsers, create intelligent mobile redirects in HTTP cache safe manner
+'detectmobile.js' allows you detect mobile browsers, create intelligent mobile redirects in HTTP cache safe manner
 using Javascript.
 
 Use cases
@@ -25,7 +24,7 @@ The script will take care of the task::
         else
                 stay on the web site     
 
-* Mobile detection is based on the screen size: you use "screens smaller than this diameter" 
+* Mobile detection is based on the devices and the screen size: you use "screens smaller than this diameter" 
   threshold which is actually the only thing you want to know to send visitors to the small screen optimized site.
   
 * detectmobile.js is cache friendly, as it is not doing any cache varying by HTTP user agent header
@@ -79,8 +78,8 @@ any other media resources are loaded.
                         <script>
                                 try {
                                         // This is the URL where mobile 
-                                        detectmobile.defaultMobileURL = "http://m.xxx.com";
-                                        detectmobile.process();                                
+                                        detectmobile.defaultMobileURL = "http://m.web.com";
+                                        detectmobile.process();
                                 } catch(e) {
                                         // Make sure that in the fault modes
                                         // we do not interrupt execution of other Javascript code
@@ -98,7 +97,7 @@ corresponding mobile page, `not the site root <http://xkcd.com/869/>`_.
 
         <html>
                 <head>
-                        <script src="http://xxx.com/detectmobile.js"></script>
+                        <script src="http://web.com/detectmobile.js"></script>
                         <script>
                                 try {                       
                                         // Set up detectmobile.js                 
@@ -161,9 +160,11 @@ The options for this Line:
 
 You can use:
 ::
-        n = No Mobile Device
-        u = Unique Device (always Mobile)
+        n = No Mobile Device (eg. iPad)
+        u = Unique Device (always Mobile eg. iPhone)
         d or '' = Detected by User-Agent and after this matches use the Screen Resolution to Detect Mobile
+
+With this Method you can simple redirect Phones to every site you want
 
 
 
@@ -211,14 +212,6 @@ All HTML capable mobile browsers are supported.
 Opera Mini is supported. 
 Other thin clients are also supported if they execute DOM on ready / window loaded Javascript events.   
 
-Detection method
-==================
-
-In versio 0.1 we do a brute check of the screen width in the pixels. Everything 960 pixels wide and narrower
-are considered as mobile screens. This covers iPhone, iPad, current Android phones and tables, etc.
-
-However the plan is to include DPI detection using CSS trick for the future versions to support to
-ignore PC screens of 800 pixels wide.
 
 Impact on the caching
 ------------------------
@@ -263,134 +256,6 @@ This cookie is only corcern of the client (Javascript) and thus should not be vi
 
 This snippet was created using fabulous `cookie-stripper.sh <http://kristianlyng.wordpress.com/2010/08/13/stripping-cookies-with-vcl>`_.
 
-Integrations
----------------------
-
-Below are some examples how to integrate detectmobile.js with various mobile frameworks.
-
-Plone / Web and Mobile
-=========================
-
-`Here <http://groups.google.com/group/gomobile-dev/browse_thread/thread/e09d2362bff279b8>`_ are short integration instructions to
-
-* `Plone <http://plone.org>`
-
-* `Web and Mobile <http://webandmobile.mfabrik.com/>`_
-
-
-Quality
----------------------
-
-The script is on the production usage at least on the following sites
-
-* http://mfabrik.com
-
-* http://www.saariselka.fi
-
-detectmobile.js works with PHP, Python, Wordpress, Joomla, Plone, Django, static HTML5, you name it... no hard dependencies to any backend system.
-
-Questions & support
----------------------
-
-Try grab Moo on #html5 IRC channel on freenode.net.
-
-History
------------
-
-This code was isolated from `Mobilize.js <https://github.com/mobilizejs/mobilize.js>`_.
-
-Documentation
----------------
-
-API documents are available at `GitHub Pages <http://miohtama.github.com/detectmobile.js/#/api/detectmobile>`_.
-
-Building API documentation
-==============================
-
-Installing prerequisitements (OSX)::
-
-        sudo gem install rdiscount json parallel rspec
-
-Installing JSDuck::
-
-        # --pre installs 2.0 beta version
-        sudo gem install --pre jsduck
-
-Get ExtJS::
-
-        wget http://extjs.cachefly.net/ext-4.0.2a-gpl.zip
-        unzip ext-4.0.2a-gpl.zip  # takes time here....
-        mkdir docs/template/extjs
-        # Create dummy entry - actually we load everything
-        # from Sencha CDN in custom index.html
-        cp ext-4.0.2a/ext-all.js docs/template/extjs
-        
-
-SASS it::
-       
-        sudo gem install compass
-        compass compile doc/template/resources/sass
-                                                      
-Building docs with JSDuck::
-                
-        bin/build-docs.sh
-
-JSDuck has hardcored branding for Sencha. 
-To get rid of this, the hacked file list is: index.html, Viewport.js.
- 
-JSDuck did not offer customization hooks, so I had to dump whole ExtJS Doc viewer
-application tree to the source code.
-
-More info
-
-* https://github.com/nene/jsduck
-
-Publishing API docs on Github
-==================================
-
-You need to create another clone of the repo::
-
-         git clone git@github.com:miohtama/detectmobile.js.git detectmobiledocs
-         cd detectmobiledocs
-         git checkout -b gh-pages origin/gh-pages
-         cp -r ../detectmobile.js/docs/apidocs/* .
-         cp ../detectmobile.js/.gitignore . # Don't commit .sass cache files
-         git add -A
-         git commit -m "Updated API docs"
-         git push
-
-More info
-
-* http://pages.github.com/
-
-Tests
-------
-
-Below are short instructions for simple manual testing.
-
-Add entry::
-
-        m.localhost 127.0.0.1
-        
-.. to your */etc/hosts* file (UNIX).        
-
-Start HTTP server in the project folder::
-
-        python -m SimpleHTTPServer 7777
-        
-And then open with desktop browser::
-
-        http://localhost:7777/tests/simple.html        
-        
-And another::
-
-        http://m.localhost:7777/tests/simple.html        
-        
-Start iOS emulator and try::
-        
-        http://localhost:7777/tests/simple.html                
-                      
-You should end up to *m.localhost:7777/tests/simple.html* via Javascript redirect.                      
 
 
 Author
@@ -404,9 +269,6 @@ Author
 
 License
 --------
-
-Code: GPL 2.
-
-The generated API documentation falls under GPL 3 license as it has been linked with Ext JS 4.0.
+Code: GPL 2
 
  
