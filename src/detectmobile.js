@@ -132,6 +132,9 @@ var detectmobile = {
 		['alcatel',			"Alcatel",			'd'],
 		['mot-',			"Motorola",			'd'],
 		['zte',				"ZTE",				'd'],
+		
+		//->Mobile Specials
+		['gt-i9300',                    "Samsung Galaxy S3",            'u'],
 
 		//-> OS
 		['symbian',			"Symbian",			'd'],
