@@ -109,58 +109,59 @@ var detectmobile = {
 	 */
 	mobileDevices : new Array(
 		
-		['mobileexplorer',	'Mobile Explorer',	'd'],
+		['mobileexplorer',	'Mobile Explorer',		'd'],
 		['palmsource',		'Palm',				'd'],
-		['palmscape',		'Palmscape',		'd'],
+		['palmscape',		'Palmscape',			'd'],
 
 		//-> Phones
 		['motorola',		'Motorola',			'd'],
-		['nokia',			'Nokia',			'd'],
-		['palm',			'Palm',				'd'],
+		['nokia',		'Nokia',			'd'],
+		['palm',		'Palm',				'd'],
 		
-		['iphone',			"Apple iPhone",		'u'],
-		['ipad',			"Apple iPad",		'n'],
-		['ipod',			"Apple iPod Touch",	'u'],
+		['iphone',		"Apple iPhone",			'u'],
+		['ipad',		"Apple iPad",			'n'],
+		['ipod',		"Apple iPod Touch",		'u'],
 		
-		['sony',			"Sony Ericsson",	'd'],
-		['ericsson',		"Sony Ericsson",	'd'],
-		['blackberry',		"BlackBerry",		'd'],
-		['lg',				"LG",				'd'],
-		['htc',				"HTC",				'd'],
-		['samsung',			"Samsung",			'd'],
-		['sharp',			"Sharp",			'd'],
-		['alcatel',			"Alcatel",			'd'],
-		['mot-',			"Motorola",			'd'],
-		['zte',				"ZTE",				'd'],
+		['sony',		"Sony Ericsson",		'd'],
+		['xperia',		"Sony Xperia", 			'u'],
+		['ericsson',		"Sony Ericsson",		'd'],
+		['blackberry',		"BlackBerry",			'd'],
+		['lg',			"LG",				'd'],
+		['htc',			"HTC",				'd'],
+		['samsung',		"Samsung",			'd'],
+		['sharp',		"Sharp",			'd'],
+		['alcatel',		"Alcatel",			'd'],
+		['mot-',		"Motorola",			'd'],
+		['zte',			"ZTE",				'd'],
 		
 		//->Mobile Specials
-		['gt-i9300',                    "Samsung Galaxy S3",            'u'],
+		['gt-i9300',            "Samsung Galaxy S3",            'u'],
 
 		//-> OS
-		['symbian',			"Symbian",			'd'],
-		['SymbianOS',		"SymbianOS",		'd'],
-		['elaine',			"Palm",				'd'],
-		['palm', 			"Palm",				'd'],
-		['series60', 		"Symbian S60",		'd'],
+		['symbian',		"Symbian",			'd'],
+		['SymbianOS',		"SymbianOS",			'd'],
+		['elaine',		"Palm",				'd'],
+		['palm', 		"Palm",				'd'],
+		['series60', 		"Symbian S60",			'd'],
 
 		//-> Browsers
-		['netfront',		"Netfront Browser",	'd'],
-		['openwave',		"Openwave Browser",	'd'],
-		['mobilexplorer',	"Mobile Explorer",	'd'],
-		['operamini',		"Opera Mini",		'd'],
-		['opera mini', 		"Opera Mini",		'd'],
+		['netfront',		"Netfront Browser",		'd'],
+		['openwave',		"Openwave Browser",		'd'],
+		['mobilexplorer',	"Mobile Explorer",		'd'],
+		['operamini',		"Opera Mini",			'd'],
+		['opera mini', 		"Opera Mini",			'd'],
 
 		//-> Other
 		['vodafone',		"Vodafone",			'd'],
-		['o2',				"O2",				'd'],
+		['o2',			"O2",				'd'],
 
 		//-> Fallback
-		['mobile',			"Generic",			'u'],
+		['mobile',		"Generic",			'u'],
 		['wireless',		"Generic",			'd'],
-		['j2me',			"Generic",			'd'],
-		['midp',			"Generic",			'd'],
-		['cldc',			"Generic",			'd'],
-		['up.link',			"Generic",			'd'],
+		['j2me',		"Generic",			'd'],
+		['midp',		"Generic",			'd'],
+		['cldc',		"Generic",			'd'],
+		['up.link',		"Generic",			'd'],
 		['up.browser',		"Generic",			'd'],
 		['smartphone',		"Generic",			'd'],
 		['cellphone',		"Generic",			'd']
